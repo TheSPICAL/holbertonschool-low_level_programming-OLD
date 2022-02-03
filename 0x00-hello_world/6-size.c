@@ -19,5 +19,5 @@ char charType;
 	printf("Size of long long : %zu bytes\n" , sizeof(longlongType));
 	printf("Size of float : %zu bytes\n" , sizeof(floatType));
 
-	return(0)
+	return(0);
 }	
