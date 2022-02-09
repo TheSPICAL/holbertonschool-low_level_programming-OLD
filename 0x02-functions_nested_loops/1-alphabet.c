@@ -7,13 +7,14 @@
  */
 int main(void)
 {
-	char i;
-
-	for (i = 'a'; i <= 'z'; i++)
-		putchar(i);
-
+	char ch = 'a';
+	printf("Lowercase Alphabets\n");
+	while(ch <= 'z')
+}
+	printf("%c ", ch);
+	ch++;
+	}
 	printf("\n");
-	
 	return (0);
 }
 
