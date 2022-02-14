@@ -1,0 +1,1 @@
+in this project we will learn about Pointers, arrays and strings
