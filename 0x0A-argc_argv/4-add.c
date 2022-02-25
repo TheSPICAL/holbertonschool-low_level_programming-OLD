@@ -1,29 +1,34 @@
 #include "main.h"
+#include "main.h"
 /**
- * main - check the code
- * @argc: number of arguments aupplied to program
- * @argv: array that contains the arguments
- * Return: Always 0.
- */
+ *  * main - check the code
+ *   * @argc: number of arguments aupplied to program
+ *    * @argv: array that contains the arguments
+ *     * Return: Always 0.
+ *      */
 int main(int argc, char *argv[])
 {
-	int result, i;
+	int result, i, j;
 
 	result = 0;
+	j = 0;
 	if (argc == 1)
 		printf("0\n");
-
-	for (i = 0; i < argc; i++)
+	else
 	{
-		if ((*argv[i] >= 65 && *argv[i] <= 90) ||
-				(*argv[i] >= 97 && *argv[i] <= 122))
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+				for (j = 0; j < (int)strlen(argv[i]); j++)
+				{
+							if (isdigit(argv[i][j]) == 0)
+							{
+											printf("Error\n");
+											return (1);
+							}
+				}
+				result += atoi(argv[i]);
 		}
-		else
-			result += atoi(argv[i]);
+		printf("%d\n", result);
 	}
-	printf("%d\n", result);
 	return (0);
-}
+}}
