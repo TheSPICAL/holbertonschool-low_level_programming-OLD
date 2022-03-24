@@ -1,13 +1,26 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
-
 /**
-  * print_binary - Prints the binary representation of a number
-  * @n: The number to representing in binary
-  *
-  * Return: Nothing
-  */
+ * traversal - compares every 0 and 1 present in n with 1
+ * @n: input
+ * Return: void
+ */
+void traversal(unsigned long int n)
+{
+	if (n == 0)
+		return;
+
+	traversal(n >> 1);
+
+	if ((n & 1) == 1)
+		_putchar('1');
+	else
+		_putchar('0');
+}
+/**
+ * print_binary - prints binary from decimal
+ * @n: %ul input
+ * Return: void
+ */
 void print_binary(unsigned long int n)
 {
 	if (n == 0)
@@ -15,25 +28,5 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-
-	_divide(n);
-}
-
-/**
-  * _divide - ...
-  * @n: ...
-  *
-  * Return: ...
-  */
-void _divide(unsigned long int n)
-{
-	if (n < 1)
-		return;
-
-	_divide(n >> 1);
-
-	if (n & 1)
-		_putchar('1');
-	else
-		_putchar('0');
+	traversal(n);
 }
