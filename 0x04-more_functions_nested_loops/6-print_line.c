@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 /**
  * print_line - prints a line
  * @n: number of times to write the '_'
